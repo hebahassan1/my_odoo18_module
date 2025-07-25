@@ -1,0 +1,18 @@
+<!-- xml -->
+<odoo>
+    <data>
+        <record id="view_mrp_production_tree_inherited_xlsx" model="ir.ui.view">
+            <field name="name">mrp.production.tree.xlsx.button</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list//header" position="inside">
+                    <button name="print_oit_production_xlsx"
+                            type="object"
+                            class="btn-primary"
+                            string="Export XLSX"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
