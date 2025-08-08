@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  
+     <!-- List View -->
+    <record id="view_pos_type_order_list" model="ir.ui.view">
+        <field name="name">pos.type.order.list</field>
+        <field name="model">pos.type.order</field>
+        <field name="arch" type="xml">
+            <list string="POS Type Orders">
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+         <!-- Action to show filtered pos orders linked to type -->
+    <record id="action_pos_order_filtered" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">pos.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('pos_type_order_id', '=', active_id)]</field>
+    </record>
+    
+   <!-- Form View -->
+<record id="view_pos_type_order_form" model="ir.ui.view">
+    <field name="name">pos.type.order.form</field>
+    <field name="model">pos.type.order</field>
+    <field name="arch" type="xml">
+        <form string="POS Type Order">
+            <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button type="action" 
+                    name="%(action_pos_order_filtered)d" 
+                    string="Orders" class="oe_stat_button" icon="fa-list">
+                        <field name="pos_order_count" widget="statinfo"/>
+                    </button>
+                </div>
+               
+                 <group>
+                        <field name="name" 
+                        readonly="name  in ('Normal')"/>
+                        <field name="active"/>
+                    </group>
+                  
+            </sheet>
+        </form>
+    </field>
+</record>
+    
+   
+
+    <!-- Action for pos.type.order -->
+    <record id="action_pos_type_order" model="ir.actions.act_window">
+        <field name="name">Order Types</field>
+        <field name="res_model">pos.type.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- Menu Item under Point of Sale -->
+    <menuitem id="menu_pos_type_order" name="Order Types" 
+    parent="point_of_sale.menu_point_config_product" 
+    action="action_pos_type_order"
+     sequence="11"/>
+</odoo>

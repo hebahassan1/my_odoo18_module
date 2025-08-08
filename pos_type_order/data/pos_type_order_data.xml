@@ -1,0 +1,21 @@
+<odoo>
+   <data noupdate="1">
+    <record id="pos_type_order.pos_type_order_1" model="pos.type.order">
+        <field name="name">Normal</field>
+    </record>
+     <record id="pos_type_order.pos_type_order_2" model="pos.type.order">
+        <field name="name">Talabat</field>
+    </record>
+     <record id="pos_type_order.pos_type_order_3" model="pos.type.order">
+        <field name="name">Elmenus</field>
+    </record>
+     
+     <record id="pos_type_order.pos_type_order_4" model="pos.type.order">
+        <field name="name">Careem Food</field>
+    </record>
+
+
+    </data>
+
+   
+</odoo>
