@@ -1,0 +1,45 @@
+<odoo>
+    <record id="view_pos_type_order_wizard" model="ir.ui.view">
+        <field name="name">pos.type.order.wizard.form</field>
+        <field name="model">pos.type.order.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print POS Type Order Report">
+                <group>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>
+                <group>
+                    <field name="config_ids" />
+                </group>
+                <footer>
+                    <button string="Print" type="object" name="action_print_report" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window action to open wizard -->
+    <record id="action_pos_type_order_wizard" model="ir.actions.act_window">
+        <field name="name">POS Type Order Report (Wizard)</field>
+        <field name="res_model">pos.type.order.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'active_ids': active_ids, 'active_model': active_model}</field>
+
+    </record>
+
+    <!-- Server action bound to model so it appears in Actions menu -->
+    <record id="server_action_open_pos_type_order_report_wizard" model="ir.actions.server">
+        <field name="name">Print POS Type Order Report</field>
+        <field name="model_id" ref="pos_type_order.model_pos_type_order"/>
+        <field name="binding_model_id" ref="pos_type_order.model_pos_type_order"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">
+             action = records.action_pos_type_order_wizard()
+        </field>
+    </record>
+
+   
+</odoo>

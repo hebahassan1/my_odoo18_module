@@ -17,6 +17,12 @@
         'security/ir.model.access.csv',
         'views/pos_order_views.xml',
         'views/pos_type_order_views.xml',
+        'wizard/pos_type_order_wizard.xml',
+        'report/pos_type_order_template.xml',
+        'report/pos_type_order_report.xml',
+       
+        
+
     ],
     
     'assets': {

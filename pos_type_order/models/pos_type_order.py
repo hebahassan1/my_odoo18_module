@@ -13,3 +13,7 @@ class PosTypeOrder(models.Model):
          for rec in self: 
              rec.pos_order_count = len(rec.pos_order_ids)
              
+    def action_pos_type_order_wizard(self):
+        action= self.env['ir.actions.actions']._for_xml_id('pos_type_order.action_pos_type_order_wizard')
+        return action
+        

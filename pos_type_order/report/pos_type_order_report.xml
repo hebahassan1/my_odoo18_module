@@ -1,0 +1,11 @@
+<odoo>
+    <record id="action_report_pos_type_order" model="ir.actions.report">
+        <field name="name">POS Type Order Report</field>
+        <field name="model">pos.type.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pos_type_order.report_pos_type_order</field>
+      <field name="report_file">pos_type_order.report_pos_type_order</field>
+
+       <!-- <field name="binding_model_id" ref="pos_type_order.model_pos_type_order" /> -->
+    </record>
+</odoo>

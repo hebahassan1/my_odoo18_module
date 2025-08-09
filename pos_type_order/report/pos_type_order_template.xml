@@ -1,0 +1,37 @@
+<odoo>
+  <template id="report_pos_type_order">
+      <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+                <!-- Report Title -->
+                <div class="page">
+                    <h2 style="text-align:center;">POS Orders Report</h2>
+
+                    <!-- Report Header Info -->
+                    <p><strong>Start Date:</strong> <t t-esc="start_date"/></p>
+                    <p><strong>End Date:</strong> <t t-esc="end_date"/></p>
+                    <p><strong>POS Config:</strong> <t t-esc="config_names"/></p>
+
+                    <!-- Table -->
+                    <table class="table table-sm o_main_table" style="width:100%; margin-top:20px;">
+                        <thead>
+                            <tr style="background-color:#eee;">
+                                <th>Order Type</th>
+                                <th style="text-align:right;">Order Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="type_counts" t-as="line">
+                                <tr>
+                                    <td><t t-esc="line['type_name']"/></td>
+                                    <td style="text-align:right;"><t t-esc="line['order_count']"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>
