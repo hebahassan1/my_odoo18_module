@@ -12,18 +12,16 @@
         'base',
         'web',
     ],
-    'data': [
-        'data/pos_type_order_data.xml',
-        'security/ir.model.access.csv',
-        'views/pos_order_views.xml',
-        'views/pos_type_order_views.xml',
-        'wizard/pos_type_order_wizard.xml',
-        'report/pos_type_order_template.xml',
-        'report/pos_type_order_report.xml',
-       
-        
-
-    ],
+  'data': [
+    'security/ir.model.access.csv',
+    'data/pos_type_order_data.xml',
+    'views/pos_order_views.xml',
+    'views/pos_type_order_views.xml',
+    'views/pos_config_views.xml',
+    'wizard/pos_type_order_wizard.xml',
+    'report/pos_type_order_template.xml',
+    'report/pos_type_order_report.xml',
+    ], 
     
     'assets': {
     'point_of_sale._assets_pos': [
