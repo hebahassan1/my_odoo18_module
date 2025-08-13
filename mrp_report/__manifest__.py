@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': "Mrp Oit Task",
+    'name': "Mrp Report",
     'version': "1.1",
     'category': "Manufacturing/Manufacturing",
     'summary': 'Print Excel Report for Manufacturing Orders & BOMs',
